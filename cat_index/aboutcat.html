@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/vender/bootstrap/bootstrap-grid.css" />
+    <!-- bootstrap -->
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="/vender/fontawesome-free-6.5.1-web/css/all.min.css"
+    />
+    <!-- font-awesome -->
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@200;300;400;500;600;700;800&family=Noto+Sans+TC:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts -->
+    <link rel="stylesheet" href="/vender/animate.min.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/shopping_cart.css" />
+    <title>about_cat</title>
+  </head>
+  <body>
+    <div class="warpper">
+      <!-- Start navbar -->
+      <header class="navbar">
+        <a href="#!" class="navbar_logo">
+          <h1 class="navbar_logo_title">P_Cat</h1>
+          <!-- 隱藏文字 提高SEO優化 -->
+        </a>
+        <div class="nav_items">
+          <ul class="navbar_nav drop-down-menu" id="menu">
+            <li class="nav_item">
+              <a href="#!" class="nav_item_link">關於P_Cat</a>
+              <ul>
+                <li>
+                  <a href="#!" class="nav_item_link">關於貓咪</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">公益活動</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item">
+              <a href="#!" class="nav_item_link">產品資訊</a>
+              <ul>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪主食</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪玩具</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪零食</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪用具</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item">
+              <a href="#!" class="nav_item_link">聯絡我們</a>
+            </li>
+          </ul>
+          <div class="icon_group">
+            <!-- 使RWD方便撰寫 -->
+            <div class="personal">
+              <a href="#!" class="personal_link">
+                <i class="fa-solid fa-user-large"></i>
+              </a>
+            </div>
+            <div class="shopping_cart" data-count="0">
+              <!-- data-count這個值是為了JS可以動態控制偽元素的content -->
+              <div class="shopping_cart_content">
+                <div class="shopping_cart_title">最近加入的商品</div>
+                <div class="shopping_cart_item demo" data-price="123">
+                  <!-- data-price="123" 增設這個原因是我的示範商品會讓我購物車價格變成NaN
+                  log的結果變成undefined -->
+                  <img src="/img/Cat_toy.jpg" class="shopping_cart_img" />
+                  <a href="#!" class="shopping_cart_link"
+                    >示範商品示範商品示範商品示範商品示範商品示範商品</a
+                  >
+                  <div class="shopping_cart_quantity">
+                    <span class="btn btn_add">+</span>
+                    <input
+                      class="shopping_cart_input"
+                      type="text"
+                      inputmode="numeric"
+                    />
+                    <!-- inputmode="numeric" 方便移動裝置時輸入數量，更為方便 -->
+                    <span class="btn btn_sub">-</span>
+                    <!-- sub（代表 subtract，即減去） -->
+                  </div>
+                  <p class="shopping_cart_price">123元</p>
+                  <div class="shopping_cart_delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+                </div>
+                <div class="shopping_cart_info">
+                  <p class="total_price">總計</p>
+                  <a href="#!" class="btn shopping_cart_btn">前往結帳</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Start  RWD nav -->
+          <div class="hamburger">
+            <input type="checkbox" id="toggler" />
+            <label for="toggler">
+              <div class="hamburger-container">
+                <span></span>
+                <span></span>
+              </div>
+            </label>
+          </div>
+          <!--End  RWD nav -->
+        </div>
+      </header>
+      <!-- End navbar -->
+    </div>
+    <!-- Start main -->
+    <section class="main"></section>
+    <!-- End main -->
+  </body>
+</html>

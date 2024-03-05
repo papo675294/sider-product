@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/* 若你有使用到中文需要的編碼宣告 */
+/* 文件開頭說明 */
+/*
+ * Page name
+ * Copyright 2020
+ * Author
+ * Licensed
+*/
+/* 目錄、區段的註解 */
+/* -------------------------- *\
+	Content
+\* -------------------------- */
+/**
+ * Content .............. You are reading it!
+ * Globed .............. Set common styles
+ * Layout .............. Set grid
+ * Components .............. Set components styles
+ * Pages .............. Set different page styles
+ * Utility .............. Set utility tools
+ */
+/* -------------------------- *\
+	Globed
+\* -------------------------- */
+* {
+  position: relative;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", "Noto Sans TC", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* -------------------------- *\
+	Layout
+\* -------------------------- */
+/* shopping_cart*/
+.shopping_cart {
+  background-image: url(../img/shopping-cart.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.shopping_cart:hover .shopping_cart_content {
+  display: block;
+}
+.shopping_cart::before {
+  content: attr(data-count);
+  /* data-count這個值是為了JS可以動態控制偽元素的content */
+  position: absolute;
+  border-radius: 50%;
+  font-size: 10px;
+  text-align: center;
+  color: #dadfe4;
+  width: 12px;
+  height: 12px;
+  background-color: #f25d50;
+  right: 0;
+  top: 0;
+}
+.shopping_cart .shopping_cart_content {
+  width: 50vh;
+  height: 50vh;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 500;
+  right: 10px;
+  top: 100%;
+  background-color: #dadfe4;
+  display: none;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_title {
+  margin-bottom: 16px;
+  border-bottom: 1px dashed #686c71;
+  color: #022873;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_link {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_quantity {
+  display: flex;
+  align-items: center;
+  margin: 0 8px;
+  padding: 0 8px;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_quantity .shopping_cart_input {
+  width: 30px;
+  border-radius: 5px;
+  border: none;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_price {
+  color: #f25d50;
+  display: flex;
+  white-space: nowrap;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_delete i {
+  color: #40414f;
+  font-size: 20px;
+  margin: 0 8px;
+  transition: all 0.3s;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_delete:hover i {
+  color: #686c71;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_item .shopping_cart_delete:active i {
+  color: #40414f;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_info {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-top: 1px dashed #686c71;
+  padding-top: 8px;
+  margin-bottom: 8px;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_info .shopping_cart_btn {
+  font-size: 12px;
+  font-weight: 600;
+}
+.shopping_cart .shopping_cart_content .shopping_cart_info .total_price {
+  color: #022873;
+}
+
+/* btn_add & btn_sub*/
+.btn_add,
+.btn_sub {
+  padding: 4px 4px;
+  background-color: #dadfe4;
+  font-weight: 400;
+  font-size: 20px;
+}
+.btn_add:active,
+.btn_sub:active {
+  background-color: #b2bac4;
+}
+.btn_add .btn_add,
+.btn_sub .btn_add {
+  margin-right: 8px;
+}
+.btn_add .btn_sub,
+.btn_sub .btn_sub {
+  margin-left: 8px;
+}
+
+/* Utility*/
+.demo {
+  pointer-events: none;
+  opacity: 0.6;
+}/*# sourceMappingURL=shopping_cart.css.map */

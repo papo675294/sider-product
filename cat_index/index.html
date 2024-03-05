@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/vender/bootstrap/bootstrap-grid.css" />
+    <!-- bootstrap -->
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="/vender/fontawesome-free-6.5.1-web/css/all.min.css"
+    />
+    <!-- font-awesome -->
+    <!-- OwlCarouse -->
+    <link
+      rel="stylesheet"
+      href="/vender/OwlCarousel2-2.3.4/assets/owl.carousel.min.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="/vender/OwlCarousel2-2.3.4/assets/owl.theme.default.min.css"
+    /> -->
+    <!-- OwlCarouse -->
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@200;300;400;500;600;700;800&family=Noto+Sans+TC:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google fonts -->
+    <link rel="stylesheet" href="/vender/animate.min.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/shopping_cart.css" />
+    <title>P_cat</title>
+  </head>
+  <body>
+    <div class="warpper">
+      <!-- Start navbar -->
+      <header class="navbar">
+        <a href="#!" class="navbar_logo">
+          <h1 class="navbar_logo_title">P_Cat</h1>
+          <!-- 隱藏文字 提高SEO優化 -->
+        </a>
+        <div class="nav_items">
+          <ul class="navbar_nav drop-down-menu" id="menu">
+            <li class="nav_item">
+              <a href="#!" class="nav_item_link">關於P_Cat</a>
+              <ul>
+                <li>
+                  <a href="#!" class="nav_item_link">關於貓咪</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">公益活動</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item">
+              <a href="#!" class="nav_item_link">產品資訊</a>
+              <ul>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪主食</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪玩具</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪零食</a>
+                </li>
+                <li>
+                  <a href="#!" class="nav_item_link">貓咪用具</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav_item">
+              <a href="#!" class="nav_item_link">聯絡我們</a>
+            </li>
+          </ul>
+          <div class="icon_group">
+            <!-- 使RWD方便撰寫 -->
+            <div class="personal">
+              <a href="#!" class="personal_link">
+                <i class="fa-solid fa-user-large"></i>
+              </a>
+            </div>
+            <div class="shopping_cart" data-count="0">
+              <!-- data-count這個值是為了JS可以動態控制偽元素的content -->
+              <div class="shopping_cart_content">
+                <div class="shopping_cart_title">最近加入的商品</div>
+                <div class="shopping_cart_item demo" data-price="123">
+                  <!-- data-price="123" 增設這個原因是我的示範商品會讓我購物車價格變成NaN
+                  log的結果變成undefined -->
+                  <img src="/img/Cat_toy.jpg" class="shopping_cart_img" />
+                  <a href="#!" class="shopping_cart_link"
+                    >示範商品示範商品示範商品示範商品示範商品示範商品</a
+                  >
+                  <div class="shopping_cart_quantity">
+                    <span class="btn btn_add">+</span>
+                    <input
+                      class="shopping_cart_input"
+                      type="text"
+                      inputmode="numeric"
+                    />
+                    <!-- inputmode="numeric" 方便移動裝置時輸入數量，更為方便 -->
+                    <span class="btn btn_sub">-</span>
+                    <!-- sub（代表 subtract，即減去） -->
+                  </div>
+                  <p class="shopping_cart_price">123元</p>
+                  <div class="shopping_cart_delete">
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+                </div>
+                <div class="shopping_cart_info">
+                  <p class="total_price">總計</p>
+                  <a href="#!" class="btn shopping_cart_btn">前往結帳</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Start  RWD nav -->
+          <div class="hamburger">
+            <input type="checkbox" id="toggler" />
+            <label for="toggler">
+              <div class="hamburger-container">
+                <span></span>
+                <span></span>
+              </div>
+            </label>
+          </div>
+          <!--End  RWD nav -->
+        </div>
+      </header>
+      <!-- End navbar -->
+      <!-- Start main -->
+      <section class="main">
+        <!-- Start top -->
+        <div
+          class="top"
+          onclick="ani_flutter(this)"
+          style="background-image: url(/img/top-removebg-preview.png)"
+        ></div>
+        <!-- end top -->
+        <!-- Start jumbotron -->
+        <div class="jumbotron">
+          <div class="owl-carousel owl-theme">
+            <div class="jumbotron_item">
+              <div class="mask-dark"></div>
+              <div
+                class="jumbotron_item_image"
+                style="
+                  background-image: url(/img/jumbotorn/pexels-karina-badura-6982643.jpg);
+                "
+              ></div>
+              <div class="jumbotron_item_content">
+                <!-- 使用container限制範圍 -->
+                <div class="container">
+                  <h2 class="jumbotron_item_title">貓咪用品專賣店!!開幕!!</h2>
+                  <p class="jumbotron_item_para">
+                    即日起到<span style="color: #f25d50">12月31日</span
+                    >>買一件享免運費，買兩件打九折
+                    <br />買三件打88折，買越多省越多
+                  </p>
+                  <a href="#!" class="btn">更多優惠...</a>
+                </div>
+              </div>
+            </div>
+            <div class="jumbotron_item">
+              <div class="mask-dark"></div>
+              <div
+                class="jumbotron_item_image"
+                style="
+                  background-image: url(/img/jumbotorn/pexels-srečni-maček-6678230.jpg);
+                "
+              ></div>
+              <div class="jumbotron_item_content">
+                <!-- 使用container限制範圍 -->
+                <div class="container">
+                  <h2 class="jumbotron_item_title">貓咪用品專賣店!!開幕!!</h2>
+                  <p class="jumbotron_item_para">
+                    即日起到<span style="color: #f25d50">12月31日</span
+                    >>買一件享免運費，買兩件打九折
+                    <br />買三件打88折，買越多省越多
+                  </p>
+                  <a href="#!" class="btn">更多優惠...</a>
+                </div>
+              </div>
+            </div>
+            <div class="jumbotron_item">
+              <div class="mask-dark"></div>
+              <div
+                class="jumbotron_item_image"
+                style="
+                  background-image: url(/img/jumbotorn/pexels-pixabay-416160.jpg);
+                "
+              ></div>
+              <div class="jumbotron_item_content">
+                <!-- 使用container限制範圍 -->
+                <div class="container">
+                  <h2 class="jumbotron_item_title">貓咪用品專賣店!!開幕!!</h2>
+                  <p class="jumbotron_item_para">
+                    即日起到<span style="color: #f25d50">12月31日</span
+                    >>買一件享免運費，買兩件打九折
+                    <br />買三件打88折，買越多省越多
+                  </p>
+                  <a href="#!" class="btn">更多優惠...</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End jumbotron -->
+        <!-- Start about -->
+        <div class="about hero">
+          <div class="container">
+            <div class="about_item wow rellax" data-rellax-speed="4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="about_content">
+                    <h3 class="about_title">天然!均衡!貓咪美食</h3>
+                    <p class="about_para">
+                      貓咪的飲食是貓咪健康的重要基石，
+                      而天然食材是貓咪飲食中的珍品
+                      。天然食材不僅美味可口，而且富含各種營養素，
+                      例如高蛋白質的肉、內臟、魚和家禽，以及南瓜、藍莓、雞蛋和胡蘿蔔等美味零食
+                      。這些食材不僅能夠滿足貓咪的味蕾，還能夠提供貓咪所需的營養，讓貓咪保持健康。
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="about_img">
+                    <div
+                      class="image_content"
+                      style="background-image: url(/img/Natural\ food.jpg)"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about_item wow rellax" data-rellax-speed="4">
+              <div class="row">
+                <!-- 使用排序order-n 1-12數字越小越靠前 bs 格線系統自帶功能 -->
+                <div class="col-lg-6 order-lg-2 order-md-1 order-sm-1">
+                  <div class="about_content">
+                    <h3 class="about_title">專業團隊為其把關</h3>
+                    <p class="about_para">
+                      為了確保貓咪的飲食習慣符合其健康需求，我們有專業獸醫師和營養師的意見，
+                      以確保貓咪的飲食習慣符合其健康需。
+                      可以幫助您確定貓咪所需的營養素，選擇最適合貓咪的食物，以確保貓咪的健康和幸福。
+                    </p>
+                  </div>
+                </div>
+                <div class="col-lg-6 order-lg-1 order-md-2 order-sm-2">
+                  <div class="about_img">
+                    <div
+                      class="image_content"
+                      style="background-image: url(/img/Cat\ food\ natural.jpg)"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End about -->
+        <!-- Start Classification -->
+        <div class="Classification">
+          <div class="container Classification_image">
+            <div class="Classification_content">
+              <h3 class="Classification-title">商品分類</h3>
+            </div>
+          </div>
+        </div>
+        <!-- End Classification -->
+        <!-- Start sort -->
+        <div class="sort hero">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="sort_content" id="sort_food">
+                  <a
+                    href="#!"
+                    class="sort_img"
+                    style="background-image: url(/img/Cat\ food\ can.jpg)"
+                  ></a>
+                  <h4 class="sort_title">貓咪主食</h4>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="sort_content">
+                  <a
+                    href="#!"
+                    class="sort_img"
+                    style="background-image: url(/img/Cat_toy.jpg)"
+                  ></a>
+                  <h4 class="sort_title">貓咪玩具</h4>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="sort_content">
+                  <a
+                    href="#!"
+                    class="sort_img"
+                    style="background-image: url(/img/Cat\ food\ cartoon.jpg)"
+                  ></a>
+                  <h4 class="sort_title">貓咪零食</h4>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="sort_content">
+                  <a
+                    href="#!"
+                    class="sort_img"
+                    style="background-image: url(/img/Cat\ litter.jpg)"
+                  ></a>
+                  <h4 class="sort_title">貓咪用具</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End sort -->
+        <!-- Start hot item -->
+        <div class="hot">
+          <div class="container">
+            <div class="row">
+              <div class="container">
+                <div class="col-lg-12">
+                  <h3 class="hot_item_mainTitle">
+                    熱銷商品
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="hot_item">
+                  <div class="hot_content">
+                    <div
+                      class="hot_img"
+                      style="
+                        background-image: url(/img/hot_item_img/hot_item_img1.jpg);
+                      "
+                    ></div>
+                    <div class="hot_title">商品名稱</div>
+                    <div class="hot_price">123元</div>
+                    <a href="#!" class="hot_btn">
+                      <i class="fa-solid fa-cart-shopping"></i>加入購物車</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="hot_item">
+                  <div class="hot_content">
+                    <div
+                      class="hot_img"
+                      style="
+                        background-image: url(/img/hot_item_img/hot_item_img2.jpg);
+                      "
+                    ></div>
+                    <div class="hot_title">商品名稱</div>
+                    <div class="hot_price">123元</div>
+                    <a href="#!" class="hot_btn">
+                      <i class="fa-solid fa-cart-shopping"></i>加入購物車</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="hot_item">
+                  <div class="hot_content">
+                    <div
+                      class="hot_img"
+                      style="
+                        background-image: url(/img/hot_item_img/hot_item_img3.jpg);
+                      "
+                    ></div>
+                    <div class="hot_title">商品名稱</div>
+                    <div class="hot_price">123元</div>
+                    <a href="#!" class="hot_btn">
+                      <i class="fa-solid fa-cart-shopping"></i>加入購物車</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="hot_item">
+                  <div class="hot_content">
+                    <div
+                      class="hot_img"
+                      style="
+                        background-image: url(/img/hot_item_img/hot_item_img4.jpg);
+                      "
+                    ></div>
+                    <div class="hot_title">商品名稱</div>
+                    <div class="hot_price">123元</div>
+                    <a href="#!" class="hot_btn">
+                      <i class="fa-solid fa-cart-shopping"></i>加入購物車</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End hot item -->
+        <!-- Start img_share -->
+        <div class="img_share hero">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <h3 class="img_share_title">圖文分享</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container">
+                <div class="waterFall" id="waterFall">
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img src="/img/waterFall/waterFall1.jpg" alt="" />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img
+                        src="/img/waterFall/pexels-cottonbro-studio-6869543.jpg"
+                        alt=""
+                      />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img src="/img/waterFall/waterFall3.jpg" alt="" />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img src="/img/waterFall/waterFall2.jpg" alt="" />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img
+                        src="/img/waterFall/pexels-luis-felipe-queiroz-11867612.jpg"
+                        alt=""
+                      />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img src="/img/waterFall/waterFall5.jpg" alt="" />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img
+                        src="/img/waterFall/pexels-meruyert-gonullu-7244318.jpg"
+                        alt=""
+                      />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img src="/img/waterFall/waterFall6.jpg" alt="" />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img
+                        src="/img/waterFall/pexels-mikhail-nilov-9783903.jpg"
+                        alt=""
+                      />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img src="/img/waterFall/waterFall7.jpg" alt="" />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img
+                        src="/img/waterFall/pexels-tima-miroshnichenko-6131097.jpg"
+                        alt=""
+                      />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img src="/img/waterFall/waterFall4.jpg" alt="" />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="waterFall_box">
+                    <div class="waterFall_pic">
+                      <img
+                        src="/img/waterFall/pexels-vitor-diniz-20133372.jpg"
+                        alt=""
+                      />
+                      <div class="waterFall_icon">
+                        <i class="fa-solid fa-eye">
+                          <span class="clickCount">0</span>
+                        </i>
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End img_share -->
+        <!-- Start footer -->
+        <footer class="footer">
+          <div class="container">
+            <div class="footer_content footer_img">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="footer_info">
+                    <p class="footer_time">時間:周一至周五 9:00至18:00</p>
+                    <p class="footer_address">門市地址:XXX縣XXX鎮XXX路YY號</p>
+                    <p class="footer_phone">客服電話:091234567898</p>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="footer_navbar">
+                    <ul class="footer_nav">
+                      <li class="footer_nav_item">
+                        <a href="#!" class="footer_nav_item_link">關於P_Cat</a>
+                        <ul class="goods_nav">
+                          <li class="goods_item">
+                            <a href="" class="goods_item_link">關於貓咪 </a>
+                          </li>
+                          <li class="goods_item">
+                            <a href="" class="goods_item_link">公益活動 </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="footer_nav_item">
+                        <a href="#!" class="footer_nav_item_link">產品資訊</a>
+                        <ul class="goods_nav">
+                          <li class="goods_item">
+                            <a href="" class="goods_item_link">貓咪主食 </a>
+                          </li>
+                          <li class="goods_item">
+                            <a href="" class="goods_item_link">貓咪玩具 </a>
+                          </li>
+                          <li class="goods_item">
+                            <a href="" class="goods_item_link">貓咪零食 </a>
+                          </li>
+                          <li class="goods_item">
+                            <a href="" class="goods_item_link">貓咪用具 </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="footer_nav_item">
+                        <a href="#!" class="footer_nav_item_link">聯絡我們</a>
+                      </li>
+                      <li class="footer_nav_item">
+                        <a href="#!" class="footer_nav_item_link">我的主頁</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="copyright">copyright</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- End footer -->
+      </section>
+      <!-- End main -->
+    </div>
+  </body>
+
+  <script src="/vender/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+  <script src="/vender/OwlCarousel2-2.3.4/owl.carousel.min.js"></script>
+
+  <!-- 商品分類的遮罩動畫 -->
+  <script src="/JS/Gradient_mouse_movement.js"></script>
+  <!-- 商品分類的遮罩動畫 -->
+
+  <!-- 購物車的功能 -->
+  <script src="/JS/shopping_cart.js"></script>
+  <!-- 購物車的功能 -->
+
+  <!-- 瀑布流排版 -->
+  <script src="/JS/waterfall.js"></script>
+  <!-- 瀑布流排版 -->
+
+  <!-- 為了about使用的插件 wow及rellax -->
+  <script src="/JS/wow.min.js"></script>
+  <script src="/JS/rellax.min.js"></script>
+  <!-- 為了about使用的插件 wow及rellax -->
+  <script>
+    //初始化瀏覽器，避免發生讀取異常
+    $(document).ready(function () {
+      //owlCarousel
+      $(".owl-carousel").owlCarousel({
+        items: 1,
+        nav: true,
+        navText: [],
+        mouseDrag: true,
+        loop: true,
+      });
+    });
+  </script>
+  <script>
+    wow = new WOW({
+      boxClass: "wow", // default
+      animateClass: "animated", // default
+      offset: 200, // default
+    });
+    wow.init();
+
+    //default JS Setting
+    var rellax = new Rellax(".rellax", {
+      center: true,
+    });
+  </script>
+  <!-- hamburger toggler-->
+  <script>
+    document.getElementById("toggler").addEventListener("change", function () {
+      var menu = document.getElementById("menu");
+      if (this.checked) {
+        // this指向的是toggler因為是在toggler中change事件裡
+        menu.classList.add("show");
+      } else {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
+  <!-- hamburger toggler-->
+  <!-- TOP-->
+  <script>
+    function ani_flutter(element) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      //scrollTo(options),可以接收一個物件作為參數
+      element.classList.add("ani_flutter");
+
+      element.addEventListener(
+        "animationend",
+        function () {
+          element.classList.remove("ani_flutter");
+        },
+        { once: true }
+        //addEventListener可以指定listener 選once之後true就可以觸發一次後就移除動畫css
+      );
+    }
+  </script>
+</html>
